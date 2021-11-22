@@ -12,18 +12,33 @@ int sum (int n)
   if (n > 1)
     return n + sum (n - 1);
   else
-    return 1;
+    return 1; 
 }
 
 /* Sum integers 1 to n */
 int sumtail (int n, int total)
 {
-    return 0;
+  //precondition
+  assert (n >= 1);
+
+  if (n == 1)
+  return n + total; 
+  else 
+  return sumtail (n-1, n + total); 
 }
+
 
 /* Sum integers 1 to n */
 int sumwhile (int n)
 {
-  return 0;
+  int i = 0;
+  int sum = 0;
+  while (i <= n)
+  {
+    sum = sum + i;
+    i++;
+  }
+  return sum;
 }
+
 
